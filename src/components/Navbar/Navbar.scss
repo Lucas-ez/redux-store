@@ -1,0 +1,33 @@
+@import './../../App.scss';
+
+.navbar {
+  padding-top: 1rem;
+
+  &-logo {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &-search {
+    input {
+      height: 54px;
+      width: 100%;
+      color: $clr-grey;
+      padding: .4rem 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      border-radius: .2rem 0 0 .2rem;
+    }
+
+    button {
+      height: 54px;
+      width: 4rem;
+      background-color: $clr-deco;
+      color: $clr-white;
+      transition: $transition;
+
+      &:hover {
+        background-color: $clr-deco-dark;
+      }
+    }
+  }
+}
