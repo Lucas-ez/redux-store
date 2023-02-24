@@ -1,7 +1,6 @@
 @import './../../App.scss';
 
 .navbar {
-  padding-top: 1rem;
 
   &-logo {
     font-size: 2rem;
@@ -29,5 +28,28 @@
         background-color: $clr-deco-dark;
       }
     }
+  }
+
+  .navbar-top {
+    padding-block: 1rem;
+  }
+
+  .navbar-bottom {
+    padding-block: .4rem;
+
+    ul {
+      gap: 1.4rem;
+
+      li {
+        font-size: 1rem;
+        transition: $transition;
+        text-transform: capitalize;
+  
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+
   }
 }
