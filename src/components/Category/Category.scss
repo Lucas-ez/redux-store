@@ -1,0 +1,15 @@
+.categories {
+  h4 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .categories-list {
+    margin-block: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1px;
+  }
+}

@@ -11,10 +11,8 @@ const Category = ({categories, status}) => {
   return (
     <section className = "categories">
       <div className = "container">
-        <div>
-            <h3>Categories</h3>
-        </div>
-        <div>
+        <h4>Categories</h4>
+        <div className='categories-list'>
           {
             categories.map(category => (
               // key = {category}
