@@ -5,6 +5,7 @@ $max-width: 1200px;
 $clr-black: #000;
 $clr-white: #fff;
 $clr-grey: #626970;
+$clr-light-grey: #eaeaea;
 
 $clr-primary: #8a034d;
 
@@ -116,6 +117,7 @@ input, textarea, select{
   &-white{background-color: $clr-white;}
   &-black{background-color: $clr-black;}
   &-clr-grey{background-color: $clr-grey;}
+  &-clr-light-grey{background-color: $clr-light-grey;}
 }
 
 // font weights
@@ -132,3 +134,12 @@ input, textarea, select{
   &-9{font-weight: 900;}
 }
 
+// breadcrumb
+.breadcrumb{
+  font-size: 1.4rem;
+  padding: 1rem 0;
+  color: $clr-dark;
+  &-separator{
+    margin: 0 .6rem;
+  }
+}

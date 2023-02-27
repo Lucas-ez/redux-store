@@ -20,7 +20,7 @@ const categorySlice = createSlice({
       state.status = action.payload;
     },
     setCategoriesProductAll(state, action){
-      state.catProductAll.push(action.payload);
+      state.catProductAll = action.payload;
     },
     setCategoriesStatusAll(state, action){
       state.catProductAllStatus = action.payload;
@@ -68,7 +68,7 @@ export const fetchProductsByCategory = (categoryID, dataType) => {
       const response = await fetch(`${BASE_URL}products/category/${categoryID}`);
       const data = await response.json();
       if(dataType === 'all'){
-        dispatch(setCategoriesProductAll(data.slice(0, 10)));
+        dispatch(setCategoriesProductAll(data));
         dispatch(setCategoriesStatusAll(STATUS.IDLE));
       }
       if(dataType === 'single'){

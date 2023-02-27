@@ -8,7 +8,6 @@ const CategoryItem = ({category}) => {
   const dispatch = useDispatch();
   const {
     catProductSingle: productByCategory,
-    catProductSingleStatus: productByCategoryStatus,
   } = useSelector(state => state.category)
 
   useEffect(() => {
@@ -19,8 +18,8 @@ const CategoryItem = ({category}) => {
   return (
     <div>
       <Link to = {`category/${category}`} >
-        <div className = "category-item" >
-          <div className='top'>
+        <div className = "flex flex-column bg-white h-100 category-item" >
+          <div className='flex flex-center h-100'>
             {
             (productByCategory[category]) !== undefined
             ?
@@ -32,8 +31,8 @@ const CategoryItem = ({category}) => {
               <div></div>
             }
           </div>
-          <div className='bottom'>
-            <h6>{category}</h6>
+          <div className='flex flex-center w-100'>
+            <h6 className='w-100 text-center text-capitalize text-clr-grey fw-6'>{category}</h6>
           </div>
         </div>
       </Link>
