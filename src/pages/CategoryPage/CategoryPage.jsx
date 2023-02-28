@@ -1,6 +1,6 @@
 import "./CategoryPage.scss";
 import { useEffect } from 'react'
-import { ProductList } from './../../components'
+import { ProductList, Breadcrumb } from './../../components'
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { fetchProductsByCategory } from '../../store/categorySlice';
@@ -15,34 +15,12 @@ const CategoryPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
+  if (products.length === 0) return <div></div>
+
   return (
     <div className="category-page  bg-clr-light-grey">
       <div className="container">
-        <div className="breadcrumb">
-            <ul className = "flex">
-              <li>
-                <Link to = "/">
-                  <i className="fa-solid fa-house"></i>
-                </Link>
-              </li>
-              <li>
-                  <span className = "breadcrumb-separator">
-                    <i className="fa-solid fa-caret-right"></i>
-                  </span>
-              </li>
-              <li>
-                Category
-              </li>
-              <li>
-                <span className = "breadcrumb-separator">
-                  <i className="fa-solid fa-caret-right"></i>
-                </span>
-              </li>
-              <li className="text-capitalize">
-                { products[0] && products[0].category }
-              </li>
-            </ul>
-        </div>
+        <Breadcrumb category={products[0].category} />
         <ProductList products={products} status={status}/>
       </div>
     </div>

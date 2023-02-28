@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { fetchProductByID } from '../../store/productSlice';
 import { Toaster } from 'react-hot-toast';
-import {Error, Loader, StarsRating} from './../../components';
+import {Error, Loader, StarsRating, Breadcrumb} from './../../components';
 import { STATUS } from '../../utils/status';
 
 
@@ -31,6 +31,7 @@ export const ProductPage = () => {
         reverseOrder={false}
       />
       <div className="container">
+        <Breadcrumb category={product.category} product={product.title}/>
         <div className="flex flex-between ProductPage-top">
           <div className="flex flex-center w-100 ProductPage-top-left">
             <img src={product.image} alt={product.title} />

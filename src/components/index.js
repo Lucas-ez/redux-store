@@ -5,5 +5,6 @@ import ProductList from './ProductList/ProductList.jsx'
 import Loader from './Loader/Loader.jsx'
 import Error from './Error/Error.jsx'
 import StarsRating from './StarsRating/StarsRating.jsx'
+import Breadcrumb from './Breadcrumb/Breadcrumb.jsx'
 
-export { Navbar, Category, Footer, ProductList, Loader, Error, StarsRating }
+export { Navbar, Category, Footer, ProductList, Loader, Error, StarsRating, Breadcrumb }
