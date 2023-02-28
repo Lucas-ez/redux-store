@@ -2,7 +2,7 @@ import "./CategoryPage.scss";
 import { useEffect } from 'react'
 import { ProductList, Breadcrumb } from './../../components'
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import { fetchProductsByCategory } from '../../store/categorySlice';
 
 const CategoryPage = () => {

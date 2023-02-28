@@ -20,13 +20,35 @@
       box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
       padding: 1.2rem 1.2rem;
 
-      .title{
+      .title {
         font-size: 1.2rem;
         font-weight: bold;
       }
 
-      .price{
+      .price {
+        width: 100%;
         font-size: 2.4rem;
+
+        border-bottom: 1px dashed black;
+      }
+
+      .qty {
+        .qty-inc, .qty-dec{
+          padding: 1rem;
+          color: $clr-grey;
+          border: 2px solid $clr-light-grey;
+          width: 32px;
+          height: 32px;
+          transition: background .2s ease;
+
+          &:hover{
+              background-color: $clr-light-grey;
+          }
+        }
+
+        .qty-value{
+            width: 40px;
+        }
       }
 
     }

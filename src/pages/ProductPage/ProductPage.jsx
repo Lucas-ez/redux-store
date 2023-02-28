@@ -1,5 +1,5 @@
 import './ProductPage.scss'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { fetchProductByID } from '../../store/productSlice';
@@ -11,14 +11,32 @@ import { STATUS } from '../../utils/status';
 export const ProductPage = () => {
   const dispatch = useDispatch();
   const {id} = useParams();
-  const {data: product, status} = useSelector(state => state.product)
+  const {data: product, status} = useSelector(state => state.product);
+  const [qty, setQty] = useState(1);
 
   useEffect(()=> {
     dispatch(fetchProductByID(id))
     // eslint-disable-next-line
   }, [])
 
-  console.log(product, status);
+  const incrementQty = () => {
+    setQty(qty + 1)
+  }
+
+  const decrementQty = () => {
+    setQty(qty === 0 ? 0 : qty - 1)
+  }
+
+  const addToCartHandler = () => {
+    const cartProduct = {
+      ...product,
+      quantity: qty,
+      totalPrice: qty*product.price
+    }
+
+    // Agregar este producto al state del carrito 
+    console.log(cartProduct);
+  };
   
   if(status === STATUS.ERROR) return (<Error />);
   if(status === STATUS.LOADING) return (<Loader />);
@@ -43,7 +61,18 @@ export const ProductPage = () => {
             <span className='title'>{product.title}</span>
             <StarsRating rate={product.rating.rate} count={product.rating.count}/>
             <span className='price'>$ {product.price}</span>
-            <button className='btn btn-primary'>
+            <div className = "qty flex">
+              <div className = "qty-change flex">
+                <button type = "button" className={'qty-dec flex flex-center' + (qty === 0 ? ' bg-clr-light-grey':'')} onClick={decrementQty}>
+                  <i className = "fa-solid fa-minus"></i>
+                </button>
+                <span className = "qty-value flex flex-center">{qty}</span>
+                <button type = "button" className='qty-inc flex flex-center' onClick={incrementQty}>
+                  <i className = "fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <button className='btn btn-primary' onClick={addToCartHandler}>
               <i className="fa-solid fa-cart-plus btn-icon"></i>
               <span>Add to cart</span>
             </button>

@@ -20,12 +20,12 @@ const StarsRating = ({rate, count}) => {
       i++
     }
 
-    return stars.map((star, index) => <i class={star + ' text-clr-gold'}></i>)
+    return stars.map((star, index) => <i key={index} className={star + ' text-clr-gold'}></i>)
     
   }
 
   return (
-    <div className='Rating'>
+    <div>
       {generate(rate)}
       <span className='count'> ({count})</span>
     </div>
