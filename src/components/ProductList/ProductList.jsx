@@ -13,11 +13,10 @@ const ProductList = ({products, status}) => {
       {
         products.map(product => 
           <Link key={product.id} to={`/product/${product.id}`} className="flex flex-column bg-white product-item" >
-            <div className="flex flex-center h-100">
+            <div className="flex flex-center h-100 product-item-top">
               <img className='w-100' src={product.image} alt={product.title} />
             </div>
-            <div className="product-item-bottom">
-              <hr />
+            <div className="product-item-bottom h-100 w-100">
               <span className='product-item-price'>{product.price.toLocaleString('us-US', { style: 'currency', currency: 'USD' })}</span>
               <span className='fw-5 w-100 text-clr-grey product-item-title'>{product.title}</span>
             </div>
