@@ -47,7 +47,7 @@ button{
   border: none;
   background-color: transparent;
   font-family: inherit;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 input, textarea, select{
@@ -141,5 +141,32 @@ input, textarea, select{
   color: $clr-dark;
   &-separator{
     margin: 0 .6rem;
+  }
+}
+
+// buttons
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.8rem;
+  border-radius: 6px;
+  transition: $transition;
+  font-size: 1.4rem;
+
+  &-icon {
+    margin-right: 0.6rem;
+  }
+
+  &-primary {
+    background-color: $clr-deco;
+    color: white;
+
+    &:hover {
+      background-color: $clr-deco-dark;
+    }
+
+    &:active {
+      background-color: $clr-dark;
+    }
   }
 }

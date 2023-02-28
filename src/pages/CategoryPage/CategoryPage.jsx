@@ -10,13 +10,10 @@ const CategoryPage = () => {
   const {id} = useParams();
   const {catProductAll: products, catProductAllStatus: status} = useSelector((state) => state.category);
 
-  
   useEffect(() => {
     dispatch(fetchProductsByCategory(id, 'all'));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
-
-  console.log(products)
 
   return (
     <div className="category-page  bg-clr-light-grey">
@@ -25,12 +22,12 @@ const CategoryPage = () => {
             <ul className = "flex">
               <li>
                 <Link to = "/">
-                  <i class="fa-solid fa-house"></i>
+                  <i className="fa-solid fa-house"></i>
                 </Link>
               </li>
               <li>
                   <span className = "breadcrumb-separator">
-                    <i class="fa-solid fa-caret-right"></i>
+                    <i className="fa-solid fa-caret-right"></i>
                   </span>
               </li>
               <li>
@@ -38,7 +35,7 @@ const CategoryPage = () => {
               </li>
               <li>
                 <span className = "breadcrumb-separator">
-                  <i class="fa-solid fa-caret-right"></i>
+                  <i className="fa-solid fa-caret-right"></i>
                 </span>
               </li>
               <li className="text-capitalize">

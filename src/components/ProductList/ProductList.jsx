@@ -12,7 +12,7 @@ const ProductList = ({products, status}) => {
     <div className='flex flex-center product-list'>
       {
         products.map(product => 
-          <Link to={`/product/${product.id}`} className="flex flex-column bg-white product-item" >
+          <Link key={product.id} to={`/product/${product.id}`} className="flex flex-column bg-white product-item" >
             <div className="flex flex-center h-100">
               <img className='w-100' src={product.image} alt={product.title} />
             </div>

@@ -59,19 +59,19 @@ export const fetchCategories = () => {
   }
 }
 
-export const fetchProductsByCategory = (categoryID, dataType) => {
+export const fetchProductsByCategory = (categoryID, quantity) => {
   return async function fetchCategoryProductThunk(dispatch){
-    if(dataType === 'all') dispatch(setCategoriesStatusAll(STATUS.LOADING));
-    if(dataType === 'single') dispatch(setCategoriesStatusSingle(STATUS.LOADING));
+    if(quantity === 'all') dispatch(setCategoriesStatusAll(STATUS.LOADING));
+    if(quantity === 'single') dispatch(setCategoriesStatusSingle(STATUS.LOADING));
     
     try{
       const response = await fetch(`${BASE_URL}products/category/${categoryID}`);
       const data = await response.json();
-      if(dataType === 'all'){
+      if(quantity === 'all'){
         dispatch(setCategoriesProductAll(data));
         dispatch(setCategoriesStatusAll(STATUS.IDLE));
       }
-      if(dataType === 'single'){
+      if(quantity === 'single'){
         const element = data[Math.floor(Math.random() * data.length)]
         dispatch(setCategoriesProductSingle([categoryID, element]));
         dispatch(setCategoriesStatusSingle(STATUS.IDLE));

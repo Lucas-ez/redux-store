@@ -1,5 +1,6 @@
 import Cart from './CartPage/CartPage.jsx'
 import Home from './HomePage/HomePage.jsx'
-import Category from './CategoryPage/CategoryPage.jsx'
+import CategoryPage from './CategoryPage/CategoryPage.jsx'
+import ProductPage from './ProductPage/ProductPage.jsx'
 
-export { Cart, Home, Category }
+export { Cart, Home, CategoryPage, ProductPage }

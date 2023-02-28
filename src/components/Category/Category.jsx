@@ -15,7 +15,6 @@ const Category = ({categories, status}) => {
         <div className='categories-list'>
           {
             categories.map(category => (
-              // key = {category}
               <CategoryItem key={category} category={category}/>
             ))
           }
