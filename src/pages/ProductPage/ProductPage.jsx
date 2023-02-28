@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { fetchProductByID } from '../../store/productSlice';
 import { Toaster } from 'react-hot-toast';
-import {Error, Loader} from './../../components';
+import {Error, Loader, StarsRating} from './../../components';
 import { STATUS } from '../../utils/status';
 
 
@@ -40,8 +40,7 @@ export const ProductPage = () => {
               {`more ${product.category}`}
             </Link>
             <span className='title'>{product.title}</span>
-            <span>{product.rating.rate}({product.rating.count})</span>
-            {/* <StarsRating rate={product.rating.rate} count={product.rating.count}/> */}
+            <StarsRating rate={product.rating.rate} count={product.rating.count}/>
             <span className='price'>$ {product.price}</span>
             <button className='btn btn-primary'>
               <i className="fa-solid fa-cart-plus btn-icon"></i>

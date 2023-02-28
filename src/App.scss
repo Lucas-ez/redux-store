@@ -6,6 +6,7 @@ $clr-black: #000;
 $clr-white: #fff;
 $clr-grey: #626970;
 $clr-light-grey: #eaeaea;
+$clr-gold: #eeb808;
 
 $clr-primary: #8a034d;
 
@@ -106,6 +107,7 @@ input, textarea, select{
   &-white{color: $clr-white;}
   &-black{color: $clr-black;}
   &-clr-grey{color: $clr-grey;}
+  &-clr-gold{color: $clr-gold;}
 }
 
 // background
