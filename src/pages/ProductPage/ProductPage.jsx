@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { fetchProductByID } from '../../store/productSlice';
-import { Toaster } from 'react-hot-toast';
+import { Toaster, toast } from 'react-hot-toast';
 import {Error, Loader, StarsRating, Breadcrumb} from './../../components';
 import { STATUS } from '../../utils/status';
+import { addToCart } from '../../store/cartSlice';
 
 
 export const ProductPage = () => {
@@ -34,8 +35,19 @@ export const ProductPage = () => {
       totalPrice: qty*product.price
     }
 
-    // Agregar este producto al state del carrito 
-    console.log(cartProduct);
+    dispatch(addToCart(cartProduct));
+    toast.success('Successfully added', {
+      style: {
+        backgroundColor: '#white',
+        border: '1px solid #368986',
+        padding: '16px',
+        color: '#368986',
+      },
+      iconTheme: {
+        primary: '#368986',
+        secondary: 'white',
+      },
+    });
   };
   
   if(status === STATUS.ERROR) return (<Error />);
@@ -45,7 +57,7 @@ export const ProductPage = () => {
   return (
     <div className='ProductPage'>
       <Toaster
-        position="top-center"
+        position="top-right"
         reverseOrder={false}
       />
       <div className="container">
