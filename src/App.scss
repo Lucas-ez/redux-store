@@ -67,6 +67,10 @@ input, textarea, select{
   padding: 0 1.6rem;
 }
 
+.min-height {
+    min-height: 65vh;
+}
+
 // flexbox class
 
 .flex{
@@ -75,6 +79,7 @@ input, textarea, select{
 
   &-column{ flex-direction: column;}
   &-center{ justify-content: center;}
+  &-around{justify-content: space-around;}
   &-between{ justify-content: space-between;}
   &-start{ justify-content: flex-start;}
   &-end{ justify-content: flex-end;}

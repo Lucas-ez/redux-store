@@ -10,18 +10,18 @@ const cartSlice = createSlice({
     addToCart(state, action){
       const findProduct = state.data.find(item => item.id === action.payload.id);
       if(findProduct){
-          const newCart = state.data.map(item => {
-              if(item.id === action.payload.id){
-                  let newQty = item.quantity + action.payload.quantity;
-                  let newTotalPrice = newQty * item.price;
-                  return { ...item, quantity: newQty, totalPrice: newTotalPrice };
-              } else {
-                  return item;
-              }
-          });
-          state.data = newCart;
+        const newCart = state.data.map(item => {
+          if(item.id === action.payload.id){
+            let newQty = item.quantity + action.payload.quantity;
+            let newTotalPrice = newQty * item.price;
+            return { ...item, quantity: newQty, totalPrice: newTotalPrice };
+          } else {
+            return item;
+          }
+        });
+        state.data = newCart;
       } else {
-          state.data.push(action.payload);
+        state.data.push(action.payload);
       }
     },
     removeFromCart(state, action){

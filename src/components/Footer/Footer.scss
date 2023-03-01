@@ -1,0 +1,29 @@
+.footer {
+  padding-block: 2.2rem;
+
+  &-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    
+    h6 {
+      font-weight: 600;
+    }
+    
+    ul {
+      li {
+        margin: 0.2rem 0;
+        opacity: 0.6;
+        transition: opacity .2s ease;
+        font-size: 1rem;
+        &:hover{
+          opacity: 1;
+        }
+      
+        .fas {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

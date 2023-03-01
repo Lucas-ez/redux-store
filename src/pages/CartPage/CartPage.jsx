@@ -15,7 +15,7 @@ const CartPage = () => {
   console.log(cartProducts)
 
   return (
-    <div>
+    <div className='  min-height'>
       CartPage
     </div>
   )

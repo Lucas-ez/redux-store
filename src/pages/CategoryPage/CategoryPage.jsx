@@ -19,7 +19,7 @@ const CategoryPage = () => {
 
   return (
     <div className="category-page  bg-clr-light-grey">
-      <div className="container">
+      <div className="container min-height">
         <Breadcrumb category={products[0].category} />
         <ProductList products={products} status={status}/>
       </div>

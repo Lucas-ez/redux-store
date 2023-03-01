@@ -19,7 +19,7 @@ const HomePage = () => {
   }, [])
 
   return (
-    <div className='home-page'>
+    <div className='home-page min-height'>
       <Category categories={categories}/>
     </div>
   )
