@@ -57,7 +57,7 @@ export const ProductPage = () => {
   return (
     <div className='ProductPage'>
       <Toaster
-        position="top-right"
+        position="bottom-right"
         reverseOrder={false}
       />
       <div className="container">
