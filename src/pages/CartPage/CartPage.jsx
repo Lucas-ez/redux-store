@@ -15,6 +15,13 @@ const CartPage = () => {
 
   console.log(cartProducts)
 
+  if(cartProducts.length === 0)
+    return (
+      <div className='min-height container'>
+        <h4>No items found</h4>
+      </div>
+    )
+
   return (
     <div className='cart-page min-height container'>
       <table className="flex flex-column w-100">
@@ -30,8 +37,6 @@ const CartPage = () => {
             </tr>
           </thead>
           {
-            (cartProducts.length > 0) 
-            ?
             cartProducts.map(product => (
               <tr className='cart-page-row' key={product.id}>
                 <td>
@@ -48,12 +53,10 @@ const CartPage = () => {
                 <td>{product.quantity}</td>
                 <td className='price'>$ {product.totalPrice}</td>
                 <td>
-                  <button className='btn btn-primary'>Remove</button>
+                  <button onClick={() => dispatch(removeFromCart(product.id))} className='btn btn-primary'>Remove</button>
                 </td>
               </tr>
             ))
-            :
-            <></>
           }
         </tbody>
       </table>
