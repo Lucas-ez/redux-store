@@ -62,7 +62,7 @@ const CartPage = () => {
       </table>
       <div className='total text-end'>
         <span className='w-100 fw-5'>
-          Total ${cartProducts.reduce((acum, prod) => acum + prod.totalPrice,0)}
+          Total ${cartProducts.reduce((acum, prod) => acum + prod.totalPrice,0).toLocaleString('us-US', { style: 'currency', currency: 'USD' })}
         </span>
       </div>
     </div>
